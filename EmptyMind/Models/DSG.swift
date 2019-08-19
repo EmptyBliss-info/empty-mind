@@ -39,10 +39,23 @@ class Role: Codable {
     var id: UUID
     var name: String
     var accountabilities: [Accountability]? = nil
+    var assigned: [Person]? = nil
     
     init (_ name: String, _ id: UUID = UUID ()) {
         self.id = id
         self.name = name
+    }
+}
+
+class Domain: Codable {
+    var id: UUID
+    var name: String
+    var description: String
+    
+    init (_ name: String, _ description: String, _ id: UUID = UUID()) {
+        self.name = name
+        self.description = description
+        self.id = id
     }
 }
 
@@ -51,13 +64,16 @@ class Circle: Codable {
     var name: String
     var parent: Circle? = nil
     var roles: [Role]? = nil
+    var lead: Person? = nil
+    var facilitator: Person? = nil
+    var secretary: Person? = nil
     
     init (_ name: String, _ parent: Circle, _ id: UUID = UUID()) {
         self.id = id
         self.name = name
         self.parent = parent
-        
-    
     }
+    
+    
     
 }
