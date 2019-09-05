@@ -1,0 +1,6 @@
+framework module Pods_EmptyMind {
+  umbrella header "Pods-EmptyMind-umbrella.h"
+
+  export *
+  module * { export * }
+}
