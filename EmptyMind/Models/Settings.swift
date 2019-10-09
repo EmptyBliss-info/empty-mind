@@ -11,6 +11,4 @@ import Foundation
 class Settings {
     static let shared = Settings()
     private init() {}
-    
-    
 }
