@@ -12,10 +12,11 @@ class Person: Codable {
     var id: UUID
     var nameLast: String
     var nameFirst: String
-    var nameMiddle: [String]?
+    var nameMiddle: String?
     var DOB: Date
+    var roles: [Role] = []
     
-    init (_ id: UUID = UUID(), _ nameLast: String, _ nameFirst: String, _ nameMiddle:[String]? = nil, _ DOB:Date) {
+    init (_ id: UUID = UUID(), _ nameLast: String, _ nameFirst: String, _ DOB:Date) {
         self.id = id
         self.nameLast = nameLast
         self.nameFirst = nameFirst
@@ -67,6 +68,7 @@ class Circle: Codable {
     var lead: Person? = nil
     var facilitator: Person? = nil
     var secretary: Person? = nil
+    var members: [Person] = []
     
     init (_ name: String, _ parent: Circle, _ id: UUID = UUID()) {
         self.id = id
